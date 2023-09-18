@@ -70,14 +70,16 @@ const App = () => {
   ));
   return (
     <main>
-      {bestTimeNumber}
       {tenzies && <Confetti />}
       <h1 className="title">TENZIES</h1>
       <p className="instructions">
         Roll until all dice are same. click each die to freeze it at its current
         value between rolls.
       </p>
-      <h3> LeastMoves:{bestTimeNumber}</h3>
+      <h3>
+        {" "}
+        LeastMoves:{bestTimeNumber === Number.MAX_VALUE ? 0 : bestTimeNumber}
+      </h3>
       <div className="dice-container">{diceElements}</div>
       <button className="roll-dice" onClick={rollDice}>
         {tenzies ? "NewGame" : "Roll"}
